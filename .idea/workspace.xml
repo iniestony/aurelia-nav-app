@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6f7e063-4cff-4e32-9b0b-67d9ca829951" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/electron.hot-server.js" afterPath="$PROJECT_DIR$/config/electron.hot-server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/protractor.conf.js" afterPath="$PROJECT_DIR$/config/protractor.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/webpack.base-dev.js" afterPath="$PROJECT_DIR$/config/webpack.base-dev.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/webpack.electron-renderer.development.js" afterPath="$PROJECT_DIR$/config/webpack.electron-renderer.development.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/electron.html" afterPath="$PROJECT_DIR$/electron.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/e2e/demo.spec.js" afterPath="$PROJECT_DIR$/test/e2e/demo.spec.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/aurelia-nav-app.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/iniestony.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="aurelia-nav-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -264,18 +262,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1465723640093</updated>
-      <workItem from="1465723641242" duration="1425000" />
+      <workItem from="1465723641242" duration="1612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1425000" />
+    <option name="totallyTimeSpent" value="1612000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
