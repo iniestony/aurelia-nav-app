@@ -8,7 +8,7 @@ import config from './webpack.electron-renderer.development';
 
 const app = express();
 const compiler = webpack(config);
-const PORT = 3000;
+const PORT = 8080;
 
 const wdm = webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,

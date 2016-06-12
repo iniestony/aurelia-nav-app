@@ -7,7 +7,7 @@ const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
   ...base.metadata,
   host: 'localhost',
-  port: 3000,
+  port: 8080,
   ENV: ENV,
   HMR: HMR
 };

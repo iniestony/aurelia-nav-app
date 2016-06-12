@@ -11,14 +11,14 @@ const config = {
   devtool: 'cheap-module-eval-source-map',
 
   entry: [
-    'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr&reload=true',
+    'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr&reload=true',
     './index',
     './src/main'
   ],
 
   output: {
     ...electronConfig.output,
-    publicPath: 'http://localhost:3000/dist/'
+    publicPath: 'http://localhost:8080/dist/'
   },
 
   module: {

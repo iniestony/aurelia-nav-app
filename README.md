@@ -25,7 +25,7 @@ npm run server
 ```
 
 This command starts the webpack development server that serves the build bundles.
-You can now browse the skeleton app at http://localhost:3000. Changes in the code
+You can now browse the skeleton app at http://localhost:8080. Changes in the code
 will automatically build and reload the app.
 
 ## Bundling
