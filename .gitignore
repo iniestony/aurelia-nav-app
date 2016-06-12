@@ -3,7 +3,7 @@ node_modules
 dist
 build
 /typings
-.idea/
+.idea
 /.awcache
 config/tmp
 npm-debug.log
