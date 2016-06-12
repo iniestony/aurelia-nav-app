@@ -1,8 +1,8 @@
-# aurelia-skeleton-webpack
+# aurelia-nav-app
 
-## Getting started
+## Setup
 
-Before you start, make sure you have a recent version of [NodeJS](http://nodejs.org/) environment *>=4.0* with NPM 3.
+Ensure NodeJS *>=4.0* with NPM 3.
 
 From the project folder, execute the following commands:
 
@@ -10,23 +10,17 @@ From the project folder, execute the following commands:
 npm install
 ```
 
-This will install all required dependencies, including a local version of Webpack that is going to
-build and bundle the app. There is no need to install Webpack globally. 
-
-After installation you will be asked to choose which language-version of the skeleton you would like to use. You may choose from:
-
-- TypeScript
-- JavaScript
-
-To run the app execute the following command:
+## Run development
 
 ```shell
 npm run server
+npm run server:dev
 ```
 
-This command starts the webpack development server that serves the build bundles.
-You can now browse the skeleton app at http://localhost:8080. Changes in the code
-will automatically build and reload the app.
+This command starts the webpack development server. You can now browse the skeleton app at http://localhost:8080.
+Changes in the code will automatically build and reload the app.
+
+
 
 ## Bundling
 
@@ -34,6 +28,7 @@ To build a development bundle (output to /dist) execute:
 
 ```shell
 npm run build
+npm run build:dev
 ```
 
 To build an optimized, minified production bundle (output to /dist) execute:
@@ -42,13 +37,14 @@ To build an optimized, minified production bundle (output to /dist) execute:
 npm run build:prod
 ```
 
-To test either the development or production build execute:
+## Run production
 
 ```shell
 npm run server:prod
 ```
+After building and bundling(either dev or prod build), starts the webpack production server.
 
-The production bundle includes all files that are required for deployment.
+
 
 ## Resource and bundling configuration
 
