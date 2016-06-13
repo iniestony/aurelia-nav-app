@@ -102,7 +102,7 @@ const config = {
    */
   cache: true,
   entry: {
-    'app': ['./src/main'],
+    'main': ['./src/main'],
     'aurelia-bootstrap': ['./index'].concat(meta.bootstrapPackages),
     'aurelia': meta.aureliaPackages,
     // if you wish to have certain packages end up in their own files, you may do so here
