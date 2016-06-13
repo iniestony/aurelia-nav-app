@@ -19,7 +19,7 @@ bootstrap(async (aurelia) => {
 
   await aurelia.start();
   /* aurelia.setRoot(module, rootElement) */
-  aurelia.setRoot('app/app', rootElement);
+  aurelia.setRoot('rootComponent/rootComponent', rootElement);
 
   // if you would like your website to work offline (Service Worker),
   // enable the OfflinePlugin in config/webpack.common.js and uncomment the following code:
