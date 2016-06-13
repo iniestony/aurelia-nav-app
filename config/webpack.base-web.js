@@ -9,15 +9,17 @@ const config = {
     ...base.module,
     loaders: [
       ...base.module.loaders,
-     /**
-      * Raw loader support for *.css files
-      * Returns file content as string
-      *
-      * See: https://github.com/webpack/raw-loader
-      */
+      // {
+      //   test: /\.css$/,
+      //   loader: ExtractTextPlugin.extract('style', 'css')
+      // },
       {
         test: /\.css$/,
-        loaders: ExtractTextPlugin.extract('style', 'css')
+        loader: "style!css"
+      },
+      {
+        test: /\.scss$/,
+        loader: "style!css!sass"
       }
     ]
   },
