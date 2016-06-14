@@ -15,7 +15,10 @@ export class Login {
   
   login() {
     console.log(this.username, this.password);
-    this.router.navigateToRoute("dashboard");
+    this.router.navigateToRoute("dashboard");//navigate with router name
+    // this.router.navigate("/dashboard/child-router");//navigate with router url
+    // this.router.navigateToRoute('dashboard', {id: 10});
+    // this.router.navigate("/dashboard/10");
   }
 
 }
