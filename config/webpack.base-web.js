@@ -9,18 +9,28 @@ const config = {
     ...base.module,
     loaders: [
       ...base.module.loaders,
-      // {
-      //   test: /\.css$/,
-      //   loader: ExtractTextPlugin.extract('style', 'css')
-      // },
+      /* css/scss import in non-entry chunks always used with <style>
+      *  css/scss import in entry chunks can be used with <style> or <link>
+      *  used with <link>, set as below, must also add a 'new ExtractTextPlugin' inside the plugins section
+      *  the import css/scss in each entry chunk into separate files: new ExtractTextPlugin('[name].css')
+      *  the import css/scss in each entry chunk into ONE file: new ExtractTextPlugin('vendor.css') */
       {
         test: /\.css$/,
-        loader: "style!css"
+        loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
         test: /\.scss$/,
-        loader: "style!css!sass"
+        loader: ExtractTextPlugin.extract('style', 'css!sass')
       }
+      /* used with <style>, set as below, no need for a 'new ExtractTextPlugin' */
+      // {
+      //   test: /\.css$/,
+      //   loader: "style!css"
+      // },
+      // {
+      //   test: /\.scss$/,
+      //   loader: "style!css!sass"
+      // }
     ]
   },
   plugins: [
@@ -101,11 +111,8 @@ const config = {
     
     /**
      * Plugin: ExtractTextPlugin
-     * It moves every import "style.css" in entry chunks into a single concatenated css output file. 
-     * So your styles are no longer inlined into the javascript, but separate in a css bundle file (styles.css). 
-     * If your total stylesheet volume is big, it will be faster because the stylesheet bundle is loaded in parallel to the javascript bundle.
      */
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('[name].css'),
     
     /**
      * Plugin: OfflinePlugin
