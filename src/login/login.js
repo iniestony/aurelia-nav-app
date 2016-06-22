@@ -8,7 +8,7 @@ export class Login {
   username = "";
   password = "";
 
-  constructor(router, http) {
+  constructor(router, http) {//use a constructor to adapt the injected
     this.router = router;
     this.http = http;
   }
