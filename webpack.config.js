@@ -18,6 +18,7 @@ const baseUrl = '/';
 const rootDir = path.resolve();
 const srcDir = path.resolve('src');
 const outDir = path.resolve('dist');
+const devPort = 8080;
 
 const coreBundles = {
   bootstrap: [
@@ -132,6 +133,7 @@ switch (ENV) {
   default:
   case 'development':
     process.env.NODE_ENV = 'development';
+    process.env.WEBPACK_PORT = devPort;
     config = generateConfig(
       baseConfig,
 
