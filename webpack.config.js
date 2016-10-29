@@ -55,7 +55,7 @@ const coreBundles = {
     'aurelia-templating-router',
     'aurelia-templating-resources'
   ]
-}
+};
 
 const baseConfig = {
   entry: {
@@ -64,9 +64,9 @@ const baseConfig = {
     'aurelia': coreBundles.aurelia.filter(pkg => coreBundles.bootstrap.indexOf(pkg) === -1)
   },
   output: {
-    path: outDir,
+    path: outDir
   }
-}
+};
 
 // advanced configuration:
 switch (ENV) {
