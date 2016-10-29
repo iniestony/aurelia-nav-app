@@ -1,4 +1,4 @@
-import {Users} from '../../src/users/users';
+import {Users} from '../../src/users';
 
 class HttpStub {
   fetch(url) {

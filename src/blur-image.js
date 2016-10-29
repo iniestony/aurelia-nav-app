@@ -1,4 +1,4 @@
-import {inject} from "aurelia-framework";
+import {inject} from 'aurelia-framework';
 
 @inject(Element)
 export class BlurImageCustomAttribute {
@@ -362,7 +362,7 @@ function BlurStack()
 function drawBlur(canvas, image) {
   var w = canvas.width;
   var h = canvas.height;
-  var canvasContext = canvas.getContext("2d");
+  var canvasContext = canvas.getContext('2d');
   canvasContext.drawImage(image, 0, 0, w, h);
   stackBlurCanvasRGBA(canvas, 0, 0, w, h, BLUR_RADIUS);
 };

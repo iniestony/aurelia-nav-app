@@ -1,11 +1,9 @@
-const helpers = require('./helpers');
-
 exports.config = {
-  baseUrl: 'http://localhost:8080/',
+  baseUrl: 'http://localhost:19876/',
 
   // use `npm run e2e`
   specs: [
-    helpers.root(helpers.language === 'javascript' ? 'test/e2e/**/*.js' : 'test/e2e/**/*.ts')
+    'e2e/**/*.js'
   ],
   exclude: [],
 
@@ -30,17 +28,13 @@ exports.config = {
   },
 
   onPrepare: function() {
-    if (helpers.language === 'javascript') {
-      require('babel-register');
-    } else {
-      require('ts-babel-node-extendable').register({ compilerOptions: { allowJs: false } });
-    }
+    require('babel-register')({
+      plugins: ['transform-decorators-legacy'],
+      presets: ['es2015-loose-native-modules', 'stage-1'],
+    });
   },
 
-  /**
-   * Aurelia configuration
-   */
   plugins: [{
-    path: helpers.root('config/aurelia.protractor.js')
+    package: 'aurelia-tools/plugins/protractor'
   }]
 };

@@ -2,15 +2,14 @@
  * Inspired by @AngularClass
  * https://github.com/AngularClass/angular2-webpack-starter
  */
-
-import testWebpackConfig from './webpack.test';
+"use strict";
+const path = require('path');
 
 module.exports = function(config) {
-  
   config.set({
 
     // base path that will be used to resolve all patterns (e.g. files, exclude)
-    basePath: '',
+    basePath: __dirname,
 
     /*
      * Frameworks to use
@@ -28,7 +27,7 @@ module.exports = function(config) {
      * we are building the test environment in ./spec-bundle.js
      */
     files: [
-      { pattern: './spec-bundle.js', watched: false },
+      { pattern: 'spec-bundle.js', watched: false },
     ],
 
     /*
@@ -36,19 +35,26 @@ module.exports = function(config) {
      * available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
      */
     preprocessors: {
-      './spec-bundle.js': [/*'coverage', */'webpack', 'sourcemap']
+      'spec-bundle.js': ['coverage', 'webpack', 'sourcemap']
     },
-
-    // Webpack Config at ./webpack.test.js
-    webpack: testWebpackConfig,
+    
+    webpack: require('../webpack.config'),
 
     coverageReporter: {
-      dir : 'coverage/',
-      reporters: [
-        { type: 'text-summary' },
-        { type: 'json' },
-        { type: 'html' }
-      ]
+      reporters: [{
+        type: 'json',
+        subdir: '.', 
+        file: 'coverage-final.json'
+      }]
+    },
+
+    remapIstanbulReporter: {
+      src: path.join(__dirname, 'coverage/coverage-final.json'),
+      reports: {
+        html: path.join(__dirname, 'coverage/')
+      },
+      timeoutNotCreated: 1000,
+      timeoutNoMoreFiles: 1000
     },
 
     // Webpack please don't spam the console when running in karma!
@@ -60,7 +66,7 @@ module.exports = function(config) {
      * possible values: 'dots', 'progress'
      * available reporters: https://npmjs.org/browse/keyword/karma-reporter
      */
-    reporters: [ 'mocha', /*'coverage'*/ ],
+    reporters: [ 'mocha', 'coverage', 'karma-remap-istanbul' ],
 
     // web server port
     port: 9876,
@@ -83,7 +89,7 @@ module.exports = function(config) {
      */
     browsers: [
       'Chrome',
-      // 'PhantomJS'
+      // TODO: https://www.npmjs.com/package/karma-electron
     ],
 
     /*

@@ -1,7 +1,7 @@
 import {PageObjectWelcome} from './welcome.po.js';
 import {PageObjectSkeleton} from './skeleton.po.js';
 
-describe('aurelia skeleton dashboard', function() {
+describe('aurelia skeleton app', function() {
   let poWelcome;
   let poSkeleton;
 
@@ -9,7 +9,7 @@ describe('aurelia skeleton dashboard', function() {
     poSkeleton = new PageObjectSkeleton();
     poWelcome = new PageObjectWelcome();
 
-    browser.loadAndWaitForAureliaPage('http://localhost:8080');
+    browser.loadAndWaitForAureliaPage('http://localhost:19876');
   });
 
   it('should load the page and display the initial page title', () => {
