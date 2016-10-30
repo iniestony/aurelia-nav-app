@@ -10,6 +10,8 @@ const generateConfig = easyWebpack.default;
 const get = easyWebpack.get;
 const path = require('path');
 const ENV = process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() || 'development';
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 let config;
 
 // basic configuration:
@@ -83,8 +85,35 @@ switch (ENV) {
       require('@easy-webpack/config-babel')(),
       require('@easy-webpack/config-html')(),
 
-      require('@easy-webpack/config-css')
-        ({ filename: 'styles.css', allChunks: true, sourceMap: false }),
+      // require('@easy-webpack/config-css')
+      //   ({ filename: 'styles.css', allChunks: true, sourceMap: false }),
+
+      {
+        plugins: [
+          new ExtractTextPlugin({
+            filename: 'extract.css',
+            allChunks: true
+          })
+        ]
+      },
+
+      {
+        module: {
+          loaders: [{
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract({
+              fallbackLoader: 'style-loader',
+              loader: 'css-loader'
+            })
+          }, {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract({
+              fallbackLoader: 'style-loader',
+              loader: 'css-loader!sass-loader'
+            })
+          }]
+        }
+      },
 
       require('@easy-webpack/config-fonts-and-images')(),
       require('@easy-webpack/config-global-bluebird')(),
@@ -117,8 +146,35 @@ switch (ENV) {
       require('@easy-webpack/config-babel')(),
       require('@easy-webpack/config-html')(),
 
-      require('@easy-webpack/config-css')
-        ({ filename: 'styles.css', allChunks: true, sourceMap: false }),
+      // require('@easy-webpack/config-css')
+      //   ({ filename: 'styles.css', allChunks: true, sourceMap: true }),
+
+      {
+        plugins: [
+          new ExtractTextPlugin({
+            filename: 'extract.css',
+            allChunks: true
+          })
+        ]
+      },
+
+      {
+        module: {
+          loaders: [{
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract({
+              fallbackLoader: 'style-loader',
+              loader: 'css-loader?sourceMap'
+            })
+          }, {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract({
+              fallbackLoader: 'style-loader',
+              loader: 'css-loader?sourceMap!sass-loader?sourceMap'
+            })
+          }]
+        }
+      },
 
       require('@easy-webpack/config-fonts-and-images')(),
       require('@easy-webpack/config-global-bluebird')(),
@@ -145,8 +201,36 @@ switch (ENV) {
       require('@easy-webpack/config-babel')(),
       require('@easy-webpack/config-html')(),
 
-      require('@easy-webpack/config-css')
-        ({ filename: 'styles.css', allChunks: true, sourceMap: false }),
+      // require('@easy-webpack/config-css')
+      //   ({ filename: 'styles.css', allChunks: true, sourceMap: true }),
+
+      {
+        plugins: [
+          new ExtractTextPlugin({
+            filename: 'extract.css',
+            allChunks: true
+          })
+        ]
+      },
+
+      {
+        module: {
+          loaders: [{
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract({
+              fallbackLoader: 'style-loader',
+              loader: 'css-loader?sourceMap'
+            })
+          }, {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract({
+              fallbackLoader: 'style-loader',
+              loader: 'css-loader?sourceMap!sass-loader?sourceMap'
+            })
+          }]
+        }
+      },
+      
 
       require('@easy-webpack/config-fonts-and-images')(),
       require('@easy-webpack/config-global-bluebird')(),
