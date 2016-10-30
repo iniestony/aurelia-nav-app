@@ -1,4 +1,4 @@
-import {ChildRouter} from '../../src/child-router';
+import {ChildRouter} from '../../src/pages/child-router';
 
 class RouterStub {
   configure(handler) {

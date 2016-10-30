@@ -11,5 +11,5 @@ export async function configure(aurelia) {
     .developmentLogging();
 
   await aurelia.start();
-  aurelia.setRoot("app");
+  aurelia.setRoot("pages/app");
 }
