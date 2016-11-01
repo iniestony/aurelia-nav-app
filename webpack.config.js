@@ -113,11 +113,14 @@ switch (ENV) {
               fallbackLoader: 'style-loader',
               loader: 'css-loader!sass-loader?includePaths[]=' + bourbonPaths
             }),
-            exclude: [
-              path.resolve(__dirname, "src/pages"),
-              path.resolve(__dirname, "src/components"),
-              path.resolve(__dirname, "src/services")
-            ]
+            /* if bourbon is used, import all the scss files to main.scss to depend on bourbon
+             * for not packing these scss files twice, exclude them for loading (already imported and loaded in main.scss)
+             */
+            // exclude: [
+            //   path.resolve(__dirname, "src/pages"),
+            //   path.resolve(__dirname, "src/components"),
+            //   path.resolve(__dirname, "src/services")
+            // ]
           }]
         }
       },
@@ -179,11 +182,14 @@ switch (ENV) {
               fallbackLoader: 'style-loader',
               loader: 'css-loader?sourceMap!sass-loader?sourceMap&includePaths[]=' + bourbonPaths
             }),
-            exclude: [
-              path.resolve(__dirname, "src/pages"),
-              path.resolve(__dirname, "src/components"),
-              path.resolve(__dirname, "src/services")
-            ]
+            /* if bourbon is used, import all the scss files to main.scss to depend on bourbon
+             * for not packing these scss files twice, exclude them for loading (already imported and loaded in main.scss)
+             */
+            // exclude: [
+            //   path.resolve(__dirname, "src/pages"),
+            //   path.resolve(__dirname, "src/components"),
+            //   path.resolve(__dirname, "src/services")
+            // ]
           }]
         }
       },
@@ -240,11 +246,14 @@ switch (ENV) {
               fallbackLoader: 'style-loader',
               loader: 'css-loader?sourceMap!sass-loader?sourceMap&includePaths[]=' + bourbonPaths
             }),
-            exclude: [
-              path.resolve(__dirname, "src/pages"),
-              path.resolve(__dirname, "src/components"),
-              path.resolve(__dirname, "src/services")
-            ]
+            /* if bourbon is used, import all the scss files to main.scss to depend on bourbon
+             * for not packing these scss files twice, exclude them for loading (already imported and loaded in main.scss)
+             */
+            // exclude: [
+            //   path.resolve(__dirname, "src/pages"),
+            //   path.resolve(__dirname, "src/components"),
+            //   path.resolve(__dirname, "src/services")
+            // ]
           }]
         }
       },
