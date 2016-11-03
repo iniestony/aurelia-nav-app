@@ -18,7 +18,6 @@ let config;
 
 // basic configuration:
 const title = 'Aurelia Navigation Skeleton';
-const baseUrl = '/';
 const rootDir = path.resolve();
 const srcDir = path.resolve('src');
 const outDir = path.resolve('dist');
@@ -82,7 +81,7 @@ switch (ENV) {
         ({compress: true}),
         
       require('@easy-webpack/config-aurelia')
-        ({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
+        ({root: rootDir, src: srcDir, title: title}),
 
       require('@easy-webpack/config-babel')(),
       require('@easy-webpack/config-html')(),
@@ -148,7 +147,7 @@ switch (ENV) {
         ({devtool: 'inline-source-map'}),
 
       require('@easy-webpack/config-aurelia')
-        ({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
+        ({root: rootDir, src: srcDir, title: title}),
 
       require('@easy-webpack/config-babel')(),
       require('@easy-webpack/config-html')(),
@@ -209,7 +208,7 @@ switch (ENV) {
       require('@easy-webpack/config-env-development')(),
 
       require('@easy-webpack/config-aurelia')
-        ({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
+        ({root: rootDir, src: srcDir, title: title}),
 
       require('@easy-webpack/config-babel')(),
       require('@easy-webpack/config-html')(),
